@@ -2,8 +2,14 @@
   "selfSlides" : [ {
     "pageOrderID" : 1,
     "pageHtmlName" : "1.html",
-    "titleName" : "大数据学习入门资料",
+    "titleName" : "big data material",
     "createDate" : "20171015",
     "imageName" : "1.jpg"
+  }, {
+    "pageOrderID" : 2,
+    "pageHtmlName" : "2.html",
+    "titleName" : "ah!jad",
+    "createDate" : "20171016",
+    "imageName" : "2.jpg"
   } ]
 }

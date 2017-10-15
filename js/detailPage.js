@@ -8,17 +8,22 @@ function load(jsonFileNumber){
 		   dataType: "json", //返回数据格式为json
 		   success: function(data) {//请求成功完成后要执行的方法 
 		       //填充categories
-			   var categoryInfoHtml="";
+			   var categoryInfoHtml="<li class=\"has-sub\"><a href='#'><span>Category</span></a><ul>";
 			   var categoryInfoList=data.categoryInfo.firstCategoryInfoList;
 			   $.each(categoryInfoList,function(i,item){
 			       var firstCategoryInfoName = item.firstCategoryInfoName;
-				   categoryInfoHtml += "<ul> <li class='has-sub'><a href='#'><span>"+firstCategoryInfoName+"</span></a><ul>";
+				   categoryInfoHtml += "<li class='has-sub'><a href='#'><span>"+firstCategoryInfoName+"</span></a>";
+				   categoryInfoHtml += "<ul>"
 				   $.each(item.secondArrayInfoList, function(i,secondCategoryInfo){
 				       categoryInfoHtml += "<li><a href='"+secondCategoryInfo.secondCategoryInfoName+"'><span>"+secondCategoryInfo.title+"</span></a></li>";
 				   })
-			   categoryInfoHtml += "</ul>";
+			   categoryInfoHtml += "</ul></li>";
+			  
 			   })
+			   categoryInfoHtml += "</ul></li>";
+			   console.log(categoryInfoHtml);
 			   $("#categoryInfo").after(categoryInfoHtml);
+			   
 		   
 			   //第一步，填充固定值
 			   var lastPageID = data.lastPageID;
