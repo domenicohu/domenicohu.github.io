@@ -47,30 +47,50 @@ function load(jsonFileNumber){
 			   
 			   //第二步，加载WriteBeforeStart
 			   var writeBeforeStateHtml = "";
-			   $.each(data.writeBeforeStart, function(i, item){
-			       writeBeforeStateHtml += "<p>" + item + "</p>";
-			   })
-			   $("#writeBeforeStart").html(writeBeforeStateHtml);
+			   var writeBeforeStartCount = data.writeBeforeStartCount;
+			   if(writeBeforeStartCount >  0){
+			    $.each(data.writeBeforeStart, function(i, item){
+               		writeBeforeStateHtml += "<p>" + item + "</p>";
+               	    })
+               	$("#writeBeforeStart").html(writeBeforeStateHtml);
+			   }
+
 			   
 			   //第三步，加载quotes和quoteIllustration
 			   $("#myquote").html(data.quotes);
 			   $("#quoteIllustration").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+data.quotesIllustration);
 			   
 			   //第四步,加载blocks信息及finalSummary信息
+			   var selfBlocksCount = data.selfBlocksCount;
+
 			   var block_html = "";
+			   if(selfBlocksCount > 0){
 			   $.each(data.blocks.selfBlocks,function(i,item){
-			       var header = item.header;
-				   block_html += "<h5>"+header+"</h5>";
-				   $.each(item.description, function(i,des){
-				       block_html += "<p>"+ des +"</p>"
-				   })
-				   $.each(item.codes, function(item,code){
-				       block_html += "<p><code>" + code + "</code></p>";
-				   })
-			   })
-			   $.each(data.finalSummary,function(i,item){
-			       block_html += "<p>"+item+"</p>";
-			   })
+                   var header = item.header;
+                   block_html += "<h5>"+header+"</h5>";
+                   var descriptionCount = item.descriptionCount;
+                   if(descriptionCount > 0){
+                   $.each(item.description, function(i,des){
+                       block_html += "<p>"+ des +"</p>"
+                      })
+                   }
+                   var codesCount = item.codesCount;
+                   if(codesCount > 0){
+                        $.each(item.codes, function(item,code){
+                           block_html += "<p><code>" + code + "</code></p>";
+                        })
+                   }
+
+               	 })
+               	}
+
+               var finalSummaryCount = data.finalSummaryCount;
+               if(finalSummaryCount > 0){
+                    $.each(data.finalSummary,function(i,item){
+                        block_html += "<p>"+item+"</p>";
+               	    })
+               }
+
 			   $("#quoteIllustration").after(block_html);
 		   }
 });

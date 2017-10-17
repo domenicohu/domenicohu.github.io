@@ -1,15 +1,23 @@
 {
   "selfSlides" : [ {
-    "pageOrderID" : 1,
     "pageHtmlName" : "1.html",
-    "titleName" : "big data material",
-    "createDate" : "20171015",
+    "titleName" : "test 1",
+    "createDate" : "2017/10/18",
     "imageName" : "1.jpg"
   }, {
-    "pageOrderID" : 2,
     "pageHtmlName" : "2.html",
-    "titleName" : "ah!jad",
-    "createDate" : "20171016",
+    "titleName" : "test 2",
+    "createDate" : "2017/10/18",
     "imageName" : "2.jpg"
+  }, {
+    "pageHtmlName" : "3.html",
+    "titleName" : "test 3",
+    "createDate" : "2017/10/18",
+    "imageName" : "3.jpg"
+  }, {
+    "pageHtmlName" : "4.html",
+    "titleName" : "test 4",
+    "createDate" : "2017/10/18",
+    "imageName" : "4.jpg"
   } ]
 }
