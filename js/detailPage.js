@@ -31,8 +31,8 @@ function load(jsonFileNumber){
 			   var createDate = data.createDate;
 			   var title = data.title;
 			   var imageName = "../images/"+data.imageName;
-			   var lastPageHtml = "../"+lastPageID+".html";
-			   var nextPageHtml = "../"+nextPageID + ".html";
+			   var lastPageHtml = "./"+lastPageID+".html";
+			   var nextPageHtml = "./"+nextPageID + ".html";
 			   if(lastPageID == 0){
 				   lastPageHtml = "../index.html";
 			   }
